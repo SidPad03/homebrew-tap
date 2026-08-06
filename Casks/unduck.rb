@@ -1,12 +1,16 @@
 cask "unduck" do
-  version "0.1.4"
-  sha256 "6b6425000bfe78d3c0717b2f30d2a8938e03de26eb08ac3457c6504780ee36c7"
+  version "0.1.5"
+  sha256 "e5938bbbe6938306b42da11fd1c0f8d6d0a364fdfdd1b6838339867b6d1efdf8"
 
   url "https://github.com/SidPad03/unduck/releases/download/v#{version}/Unduck-#{version}.dmg"
   name "Unduck"
   desc "Restores normal media volume during FaceTime and other VoIP calls"
   homepage "https://github.com/SidPad03/unduck"
 
+  # Unduck replaces its own bundle from "Check for Updates…", so the version on
+  # disk can move ahead of the cask. Without this, brew keeps trying to "upgrade"
+  # an app that already updated itself.
+  auto_updates true
   # The app's Info.plist sets LSMinimumSystemVersion 26.1; routing needs the 26.1
   # aggregate-device fix. Tahoe is macOS 26.
   depends_on macos: :tahoe
