@@ -1,11 +1,15 @@
 cask "unduck" do
-  version "0.1.2"
-  sha256 "7f0ec1dea38c417c8c10821c680d047bbff887a9f841a3828522cc4edfbd8c41"
+  version "0.1.3"
+  sha256 "a55a3e192b9bc5c2ad271a3d041b5e54ff732af58f71be77f2695fc18be3f1bf"
 
   url "https://github.com/SidPad03/unduck/releases/download/v#{version}/Unduck-#{version}.dmg"
   name "Unduck"
   desc "Restores normal media volume during FaceTime and other VoIP calls"
   homepage "https://github.com/SidPad03/unduck"
+
+  # The app's Info.plist sets LSMinimumSystemVersion 26.1; routing needs the 26.1
+  # aggregate-device fix. Tahoe is macOS 26.
+  depends_on macos: :tahoe
 
   app "Unduck.app"
 
