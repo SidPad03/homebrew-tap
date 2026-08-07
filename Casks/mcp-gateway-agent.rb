@@ -1,6 +1,6 @@
 cask "mcp-gateway-agent" do
-  version "1.0.0"
-  sha256 "4ad893f115a25c49a1c24a3968b84360e35a06adf85df6e737defd4fb49423ce"
+  version "1.0.1"
+  sha256 "00da6effdce6970cc031af3db41ebe073785a56b65d12f2b106340e42786f0d3"
 
   url "https://github.com/SidPad03/unified-mcp-gateway/releases/download/agent-v#{version}/MCP-Gateway-Agent-#{version}.dmg"
   name "MCP Gateway Agent"
@@ -16,10 +16,18 @@ cask "mcp-gateway-agent" do
     regex(/^agent[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
-  # The app replaces its own bundle from Settings → Updates, so the version on
-  # disk can move ahead of the cask. Without this, brew keeps trying to
-  # "upgrade" an app that has already updated itself.
-  auto_updates true
+  # `auto_updates true` belongs here in principle: the app replaces its own
+  # bundle from Settings → Updates, and without the flag brew keeps trying to
+  # "upgrade" something that already upgraded itself.
+  #
+  # It is off because that self-updater does not work yet. Builds ship with an
+  # empty MCPGAUpdatePublicKey until MCPGA_UPDATE_PRIVATE_KEY and
+  # MCPGA_UPDATE_PUBLIC_KEY are set as repository secrets, so the app reports an
+  # update and then declines to install it. `brew upgrade` skips auto_updates
+  # casks unless you pass --greedy, so the flag left the app with no working
+  # update path at all: not brew's, and not its own. Restore it in the same
+  # change that adds the signing keys.
+  #
   # The app's Info.plist sets LSMinimumSystemVersion 26.0. Tahoe is macOS 26.
   depends_on macos: :tahoe
 
