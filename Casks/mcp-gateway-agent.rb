@@ -1,11 +1,6 @@
 cask "mcp-gateway-agent" do
   version "1.0.0"
-  # TODO: fill from the published DMG once agent-v1.0.0 exists:
-  #   shasum -a 256 MCP-Gateway-Agent-1.0.0.dmg
-  # Deliberately left wrong rather than set to :no_check — the app is ad-hoc
-  # signed, so the checksum is the only thing vouching for the download, and an
-  # install should fail loudly instead of fetching an unverified bundle.
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "4ad893f115a25c49a1c24a3968b84360e35a06adf85df6e737defd4fb49423ce"
 
   url "https://github.com/SidPad03/unified-mcp-gateway/releases/download/agent-v#{version}/MCP-Gateway-Agent-#{version}.dmg"
   name "MCP Gateway Agent"
