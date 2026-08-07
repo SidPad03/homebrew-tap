@@ -1,6 +1,6 @@
 cask "mcp-gateway-agent" do
-  version "1.0.4"
-  sha256 "7cc670f95e46521bda72c625c44db0eeb44a1edea8892a93dd582ed987655089"
+  version "1.0.5"
+  sha256 "570ca316983f085438956cad2a47a9f8a9337752949b3db137eac0e521c22f63"
 
   url "https://github.com/SidPad03/unified-mcp-gateway/releases/download/agent-v#{version}/MCP-Gateway-Agent-#{version}.dmg"
   name "MCP Gateway Agent"
