@@ -1,6 +1,6 @@
 cask "unduck" do
-  version "0.1.5"
-  sha256 "e5938bbbe6938306b42da11fd1c0f8d6d0a364fdfdd1b6838339867b6d1efdf8"
+  version "0.1.7"
+  sha256 "b47a610846f4918b090fd092872748617ccbe252ec0a03a6317051b454de51b8"
 
   url "https://github.com/SidPad03/unduck/releases/download/v#{version}/Unduck-#{version}.dmg"
   name "Unduck"
