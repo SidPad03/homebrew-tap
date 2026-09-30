@@ -1,6 +1,6 @@
 cask "unduck" do
-  version "0.1.7"
-  sha256 "b47a610846f4918b090fd092872748617ccbe252ec0a03a6317051b454de51b8"
+  version "0.1.8"
+  sha256 "677cc97e86715040a7c496d1f952383edb724f6e6dc5a57033b93dfeb1d26d19"
 
   url "https://github.com/SidPad03/unduck/releases/download/v#{version}/Unduck-#{version}.dmg"
   name "Unduck"
@@ -18,10 +18,6 @@ cask "unduck" do
   app "Unduck.app"
 
   caveats <<~EOS
-    Unduck is ad-hoc signed (not notarized), so on first launch macOS may block it.
-    Right-click Unduck in Applications and choose Open, or run:
-      xattr -dr com.apple.quarantine "/Applications/Unduck.app"
-
     Unduck needs macOS 26.1 or later, and asks for System Audio Recording
     permission on your first call.
   EOS
