@@ -49,14 +49,6 @@ cask "mcp-gateway-agent" do
   ]
 
   caveats <<~EOS
-    MCP Gateway Agent is ad-hoc signed (not notarized), so on first launch macOS
-    will say it cannot be opened. Right-click the app in Applications and choose
-    Open, or run:
-      xattr -dr com.apple.quarantine "/Applications/MCP Gateway Agent.app"
-
-    Updates installed from inside the app are not quarantined, so this is a
-    one-time step.
-
     Open the app, enter your gateway address, and sign in through the browser.
     There is no API key to create or paste.
   EOS
