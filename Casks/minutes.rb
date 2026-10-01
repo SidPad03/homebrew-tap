@@ -2,8 +2,8 @@
 # the first release and fills in the version and sha256. After that the tap's copy is the
 # one that counts, and each release changes only those two lines.
 cask "minutes" do
-  version "0.1.0"
-  sha256 "49bc459656c8f93fa7bcef75f0402da5eb9c4913d9655d0d9c08761ed518fb19"
+  version "0.1.1"
+  sha256 "6d605aa09c0ab37149a28c0c84a9db57f9c3fc247a458dcc95dddb568bf75c74"
 
   url "https://github.com/SidPad03/minutes/releases/download/v#{version}/Minutes-#{version}.dmg"
   name "Minutes"
